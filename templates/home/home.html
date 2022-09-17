@@ -1,0 +1,195 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Sasta Rolex</title>
+
+    <link rel="stylesheet" href="{% static 'footer-facilities.css' %}">
+    <link rel="stylesheet" href="{% static 'navbar.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+    <style>
+        body {
+            margin: 0px;
+            font-family: sans-serif;
+        }
+
+        /* main-image */
+        .main {
+            position: relative;
+            color: white;
+        }
+
+        .maintext {
+            position: absolute;
+            bottom: 20px;
+            left: -300px;
+            font-size: 65px;
+        }
+
+        /* products */
+
+        .mens-title,
+        .women-title {
+            margin: 30px 0px;
+            padding: 10px 0px;
+            border: solid #dcc876;
+        }
+
+        .img {
+            text-align: center;
+            /* width: 300px; */
+        }
+
+        button {
+            width: 100px;
+            height: 30px;
+            border: none;
+            background-color: #dcc876;
+            cursor: pointer;
+        }
+
+        a.buyingbutton {
+            margin: 0px;
+            font-size: 17px;
+            color: #000000;
+            text-decoration: none;
+        }
+
+        a.bag{
+            color: #000000;
+        }
+        
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-light fixed-top d-flex justify-content-between p-0">
+        <div class="nav-items">
+            <a href="#mens" class="headerlinks">Men</a>
+            <a href="#women" class="headerlinks">Women</a>
+        </div>
+        <div class="logo">
+            <img src="{% static 'logo.png' %}" width="190px">
+        </div>
+        <div class="headericons h4 m-0">
+            <i class="bi-search m-2"></i>
+            <i class='bi-person-circle ml-1'></i>
+            <a href="{% url 'cart' %}" class="bag"><i class='bi-bag m-2'></i></a>
+        </div>
+    </nav>
+
+    <!-- Main Image -->
+    <div class="main">
+        <img src="{% static 'homepage1.jpg' %}" width="100%">
+        <div class="maintext">
+            <pre>
+            Rolex.
+            But much better.
+            </pre>
+        </div>
+    </div>
+
+    <!-- Mens -->
+    <section id="mens">
+        <div class="container">
+            <h1 class="text-center mens-title">Men</h1>
+
+            <div class="row">
+                {% for product in men_products %}
+                <div class="col img">
+                    <img src="/media/{{product.product_images.first.image}}" width="300px">
+                    <p class="productdetails">{{product.product_name}}</p>
+                    <p class="price mt-2">Price:<b>${{product.price}}.00</b></p>
+                    <button class="buyingbutton">
+                        <a href="{% url 'get_product' product.slug %}" class="buyingbutton">Buy</a>
+                    </button>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Women -->
+    <section id="women">
+        <div class="container">
+            <h1 class="text-center women-title">Women</h1>
+            <div class="row">
+                {% for product in women_products %}
+                <div class="col img">
+                    <img src="/media/{{product.product_images.first.image}}" width="300px">
+                    <p class="productdetails">{{product.product_name}}</p>
+                    <p class="price mt-2">Price:<b>${{product.price}}.00</b></p>
+                    <button class="buyingbutton">
+                        <a href="{% url 'get_product' product.slug %}" class="buyingbutton">Buy</a>
+                    </button>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities -->
+    <div class="facilities">
+        <div class="freeshipping">
+            <img src="{% static 'delivery.png' %}" class="icons">
+            <p class="heading">Free Shipping</p>
+        </div>
+        <div class="easyreturn">
+            <img src="{% static 'return.png' %}" class="icons">
+            <p class="heading">Easy Returns</p>
+        </div>
+        <div class="giftrap">
+            <img src="{% static 'gift.png' %}" class="icons">
+            <p class="heading">Gift Wrapping</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="subfooter">
+            <div class="email">
+                <input type="email" placeholder="Email">
+        </div>
+        <div class="info">
+            <ul>
+                <li>FAQs</li>
+                <li>Shipping and Delivery</li>
+                <li>Returns and Exchanges</li>
+            </ul>
+        </div>
+        <div class="info">
+            <ul>
+                <li>Terms and Services</li>
+                <li>About us</li>
+            </ul>
+        </div>
+        <div class="socialmedia">
+            <ul>
+                <li><a href="#" class="bi-instagram text-dark m-2"></a>Instagram</li>
+                <li><a href="#" class="bi-facebook text-dark m-2"></a>Facebook</li>
+                <li><a href="#" class="bi-twitter text-dark m-2"></a>Twitter</li>
+            </ul>
+        </div>
+        </div>
+
+        <div class="text-center copyright">
+                <p>Copyright &copy; 2022 Sasta Rolex.All rights reserved.</p>
+            </div>
+        </div>
+    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+        /* header */
+
+        body::before{
+            display: block;
+            content: '';
+            height: 83px;
+        }
+
+        .nav-items {
+            align-self: center;
+            padding: 15px;
+            font-size: 19px;
+        }
+
+        .headericons {
+            align-self: center;
+            padding: 15px;
+        }
+
+        .headerlinks {
+            text-decoration: none;
+            color: black;
+            padding: 8px;
+        }
+
+        .headerlinks:hover {
+            text-decoration: underline;
+            color: black;
+        }
