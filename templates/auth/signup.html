@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+
+    <link rel="stylesheet" href="{% static 'css/auth.css' %}"> 
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 class="log-in-title">Sign Up</h1>
+        <form action="/userauth/signup" method="post" onsubmit="return validate()">
+
+            {% csrf_token %}
+
+            {% if messages %}
+            <div class="alert-msg">
+                {% for message in messages %}
+                {{ message }}
+                {% endfor %}
+            </div>
+            {% endif %}
+
+
+            <input type="text" name="username" placeholder="Username" id="username">
+            <p id="username-error" class="error"></p>
+
+            <input type="text" name="email" placeholder="E-mail" id="email">
+            <p id="email-error" class="error"></p>
+
+            <input type="password" name="password" placeholder="Password" id="password1">
+            <p id="pass1-error" class="error"></p>
+
+            <input type="password" name="verify-password" placeholder="Re-Enter Password" id="password2">
+            <p id="pass2-error" class="error"></p>
+            
+            <input type="submit" value="Sign Up">
+
+        </form>
+        
+    </div>
+
+    <script src="{% static 'validate.js' %}"></script>
+
+</body>
+
+</html>

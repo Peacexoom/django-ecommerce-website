@@ -7,8 +7,8 @@
 
     <title>Product Details</title>
 
-    <link rel="stylesheet" href="{% static 'footer-facilities.css' %}">
-    <link rel="stylesheet" href="{% static 'navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer-facilities.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
@@ -23,6 +23,7 @@
         
         .productdetails {
             display: flex;
+            margin: 0px 60px;
         }
 
         .details{
@@ -52,6 +53,22 @@
         a.bag{
             color: #000000;
         }
+
+        .nav-comp{
+            display: flex;
+        }
+
+        .username-logout{
+            display: flex;
+            border-style: solid;
+            border-width: 2px;
+            border-radius: 5px;
+            padding: 1px 15px;
+        }
+
+        .username{
+            margin-right: 10px;
+        }
         
     </style>
 
@@ -65,11 +82,15 @@
             <a href="#women" class="headerlinks">Women</a>
         </div>
         <div class="logo">
-            <img src="{% static 'logo.png' %}" width="190px">
+            <a href="/">
+            <img src="{% static 'logo3.png' %}" width="190px">
+            </a>
         </div>
-        <div class="headericons h4 m-0">
-            <i class="bi-search m-2"></i>
-            <i class='bi-person-circle ml-1'></i>
+        <div class="headericons h4 m-0 nav-comp">
+            <div class="username-logout">
+                <div class="username">{{ user.username }}</div>
+                <a href="/userauth/logout"><i class='bi-person-circle ml-1'></i></a>
+            </div>
             <a href="{% url 'cart' %}" class="bag"><i class='bi-bag m-2'></i></a>
         </div>
     </nav>
@@ -84,9 +105,9 @@
             <h3>${{product.price}}.00</h3>
             <hr>
             <p>{{product.product_description}}</p>
-                <button>
+                {% comment %} <button>
                     <a href="\Payment Page\paymentpage.html" class="buyingbutton">Buy</a>
-                </button>
+                </button> {% endcomment %}
                 <button class="addtocart">
                     <i class='bi-cart'></i>
                     <a href="{% url 'add_to_cart' product.uid %}" class="buyingbutton">Add to Cart</a>
@@ -97,15 +118,15 @@
     <!-- Facilities -->
     <div class="facilities">
         <div class="freeshipping">
-            <img src="{% static 'delivery.png' %}" class="icons">
+            <img src="{% static 'facilities/delivery.png' %}" class="icons">
             <p class="heading">Free Shipping</p>
         </div>
         <div class="easyreturn">
-            <img src="{% static 'return.png' %}" class="icons">
+            <img src="{% static 'facilities/return.png' %}" class="icons">
             <p class="heading">Easy Returns</p>
         </div>
         <div class="giftrap">
-            <img src="{% static 'gift.png' %}" class="icons">
+            <img src="{% static 'facilities/gift.png' %}" class="icons">
             <p class="heading">Gift Wrapping</p>
         </div>
     </div>

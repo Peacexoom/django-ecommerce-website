@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-)$rb!q9lbbhel3pljr_7bzxp3=t&gih!w)zp*0(-!cepkk$-ml'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -41,6 +45,7 @@ INSTALLED_APPS = [
     'products',
     'home',
     'accounts',
+    'userauth',
 ]
 
 MIDDLEWARE = [
@@ -132,5 +137,5 @@ STATICFILES_DIRS = [
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_URL = '/media/'
 
-RAZOR_KEY_ID = 'rzp_test_j6SNOGcifJAZYW'
-RAZOR_KEY_SECRET = 'elbwRV2UzxkXqAJh4tVAwiz9'
+RAZOR_KEY_ID = os.environ.get('RAZOR_KEY_ID')
+RAZOR_KEY_SECRET = os.environ.get('RAZOR_KEY_SECRET')
