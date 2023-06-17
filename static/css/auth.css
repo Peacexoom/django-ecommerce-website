@@ -1,0 +1,117 @@
+@media (max-width: 480px) {
+    .container {
+        background-color: rgba(0, 0, 0);
+        height: 100%;
+        width: 100%;
+    }
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-image: url("bgimg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1520px 730px;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 60px 68px;
+    height: fit-content;
+    width: 320px;
+    border-radius: 7px;
+}
+
+.alert-msg{
+    padding: 15px 0px 15px 20px;
+    border: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: #e50914;
+    color: #e50914;
+}
+
+.log-in-title {
+    margin-top: 0px;
+}
+
+input[type="text"],
+input[type="password"] {
+    background-color: #333;
+    width: 300px;
+    border: none;
+    border-radius: 4px;
+    height: 50px;
+    margin-top: 15px;
+    padding-left: 20px;
+    color: white;
+    font-size: 16px;
+}
+
+input::placeholder {
+    font-size: 16px;
+    color: #8c8c8c;
+}
+
+input[type=text]:focus,
+input[type="password"]:focus {
+    border: 2px solid #e50914;
+    outline: none;
+}
+
+input[type="submit"] {
+    background-color: #e50914;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    height: 50px;
+    margin: 25px 0px 10px 0px;
+}
+
+.error {
+    display: none;
+    margin: 3px 0px 0px 0px;
+    font-size: 12px;
+    color: #c12b33;
+
+}
+
+.new-to-website {
+    display: inline-block;
+    color: #737373;
+    margin-bottom: 0px;
+}
+
+.sign-up {
+    text-decoration: none;
+    color: white;
+}
+
+.sign-up:hover {
+    text-decoration: underline;
+}
+
+.logout {
+    background-color: #e50914;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    height: 50px;
+    margin: 25px 0px 10px 0px;
+}
+
+.hello {
+    text-align: center;
+    color: rgb(116, 116, 116);
+}
