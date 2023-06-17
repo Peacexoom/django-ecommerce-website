@@ -4,6 +4,7 @@ Welcome to the TimeCrafters! This is a ecommerce website with a frontend built u
 
 ## Features
 
+
 ### Backend Features
 
 1. Authentication System: The application includes a robust authentication system that allows users to sign up, log in, and log out securely.
@@ -27,22 +28,3 @@ The frontend of the application is developed using HTML, CSS, and Bootstrap. It 
 3. Cart: The cart page displays the items selected by the user, along with the total cost and options for modifying the cart contents before proceeding to checkout.
 
 4. Payment Gateway: This page facilitates the secure processing of online payments through the integrated Razorpay payment gateway.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
